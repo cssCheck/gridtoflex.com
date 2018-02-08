@@ -277,6 +277,58 @@ const ex2_GridSolution =`/* Grid Implementation */
   height: var(--footerHeight);
 }`;
 
+const ex3_FullSolution = `/* Grid Implementation */
+
+@supports (display: grid) {
+  .ex3 .container {
+    display: grid;
+    grid-template-columns: repeat(var(--columnRepeat), 1fr);
+    align-items: stretch;
+  }
+  
+  .ex3 .container > div {
+    flex: 1;
+  }
+}
+
+/* Flexbox Fallback */
+
+@supports not (display: grid) {
+  .ex3 .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .ex3 .container > div {
+    flex: 1;
+    flex-basis: calc(100% / var(--columnRepeat));
+    align-self: flex-start;
+  }
+}`;
+const ex3_GridSolution = `/* Grid Implementation */
+
+.ex3 .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ex3 .container > div {
+  flex: 1;
+  flex-basis: calc(100% / var(--columnRepeat));
+  align-self: flex-start;
+}`;
+const ex3_FlexSolution = `/* Flex Implementation */
+
+.ex3 .container {
+  display: grid;
+  grid-template-columns: repeat(var(--columnRepeat), 1fr);
+  align-items: stretch;
+}
+
+.ex3 .container > div {
+  flex: 1;
+}`;
+
 // Events
 
 document.querySelector('.ex1 .flex-button').addEventListener('click', function() {
@@ -303,7 +355,20 @@ document.querySelector('.ex2 .both-button').addEventListener('click', function()
     codeContent = ex2_FullSolution;
   updateCodeContent(codeContent, 'ex2');
 });
+document.querySelector('.ex3 .flex-button').addEventListener('click', function() {
+  codeContent = ex3_FlexSolution;
+  updateCodeContent(codeContent, 'ex3');
+});
+document.querySelector('.ex3 .grid-button').addEventListener('click', function() {
+    codeContent = ex3_GridSolution;
+    updateCodeContent(codeContent, 'ex3');
+});
+document.querySelector('.ex3 .both-button').addEventListener('click', function() {
+    codeContent = ex3_FullSolution;
+  updateCodeContent(codeContent, 'ex3');
+});
 
 // Initial setup for Ex1
 updateCodeContent(ex1_FullSolution, 'ex1');
 updateCodeContent(ex2_FullSolution, 'ex2');
+updateCodeContent(ex3_FullSolution, 'ex3');
