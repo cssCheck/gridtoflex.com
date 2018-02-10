@@ -200,7 +200,7 @@ const ex2_FullSolution = `/* Grid Implementation */
   }
 }`;
 
-const ex2_FlexSolution =`/* Flex Implementation */
+const ex2_GridSolution =`/* Grid Implementation */
 
 .ex2 .container {
   display: grid;
@@ -241,7 +241,7 @@ const ex2_FlexSolution =`/* Flex Implementation */
   grid-area: 👠;
 }`;
 
-const ex2_GridSolution =`/* Grid Implementation */
+const ex2_FlexSolution =`/* Flex Implementation */
 
 .ex2 .container {
   display: flex;
@@ -283,7 +283,6 @@ const ex3_FullSolution = `/* Grid Implementation */
   .ex3 .container {
     display: grid;
     grid-template-columns: repeat(var(--columnRepeat), 1fr);
-    align-items: stretch;
   }
   
   .ex3 .container > div {
@@ -302,10 +301,9 @@ const ex3_FullSolution = `/* Grid Implementation */
   .ex3 .container > div {
     flex: 1;
     flex-basis: calc(100% / var(--columnRepeat));
-    align-self: flex-start;
   }
 }`;
-const ex3_GridSolution = `/* Grid Implementation */
+const ex3_FlexSolution = `/* Flex Implementation */
 
 .ex3 .container {
   display: flex;
@@ -313,21 +311,48 @@ const ex3_GridSolution = `/* Grid Implementation */
 }
 
 .ex3 .container > div {
-  flex: 1;
   flex-basis: calc(100% / var(--columnRepeat));
-  align-self: flex-start;
 }`;
-const ex3_FlexSolution = `/* Flex Implementation */
+const ex3_GridSolution = `/* Grid Implementation */
 
 .ex3 .container {
   display: grid;
   grid-template-columns: repeat(var(--columnRepeat), 1fr);
-  align-items: stretch;
+}`;
+const ex4_GridSolution = `/* Grid Solution */
+
+.ex4 .yellow {
+  display: grid;
+  grid-template: 
+      '📝 👾 💁🏻‍' /
+      auto 1fr auto;
+  height: var(--headerHeight);
+  width: 100%;
 }
 
-.ex3 .container > div {
-  flex: 1;
-}`;
+.ex4 .green {
+  grid-area: 📝;
+}
+
+.ex4 .blue + .blue{
+  margin-left: 1em;
+}
+
+.ex4 .orange {
+  grid-area: 💁🏻‍;
+}`
+const ex4_FlexSolution = `/* Flex Solution */
+
+.ex4 .yellow {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: var(--headerHeight);
+}
+
+.ex4 .blue + .blue {
+  margin-left: 1em;
+}`
 
 // Events
 
@@ -366,6 +391,18 @@ document.querySelector('.ex3 .grid-button').addEventListener('click', function()
 document.querySelector('.ex3 .both-button').addEventListener('click', function() {
     codeContent = ex3_FullSolution;
   updateCodeContent(codeContent, 'ex3');
+});
+document.querySelector('.ex4 .flex-button').addEventListener('click', function() {
+  codeContent = ex4_FlexSolution;
+  updateCodeContent(codeContent, 'ex4');
+});
+document.querySelector('.ex4 .grid-button').addEventListener('click', function() {
+    codeContent = ex4_GridSolution;
+    updateCodeContent(codeContent, 'ex4');
+});
+document.querySelector('.ex4 .both-button').addEventListener('click', function() {
+    codeContent = ex4_FullSolution;
+  updateCodeContent(codeContent, 'ex4');
 });
 
 // Initial setup for Ex1

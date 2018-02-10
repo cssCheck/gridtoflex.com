@@ -58,3 +58,8 @@ ol {
   margin: 0;
   padding: 0;
 }
+
+.container {
+  height: calc(#{var(--headerHeight)} + #{var(--middleHeight)} + #{var(--footerHeight)});
+  background-color: #f6f6f6;
+}

@@ -1,37 +1,62 @@
 // just for site
-.ex4 .container div {
-  min-height: 0;
-}
-
-// flex solution
-
 .ex4 .container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: space-between;
-
   // just for icon
   .red {
     font-size: 2em;
     width: 1.8em;
     height: 1.8em;
   }
-
-  .green {
-    display: flex;
-
-    li {
-      flex: 1;
-      list-style: none;
-      
-      + li {
-        margin-left: 1em;
-      }
-    }
-  }
-
-  .orange {
-    display: flex;
-  }
 }
+.ex4 .container div {
+  min-height: 0;
+}
+
+// flex solution
+
+// .ex4 .container {
+//   display: flex;
+//   flex-wrap: wrap;
+//   width: 100%;
+//   justify-content: space-between;
+
+//   .green {
+//     display: flex;
+
+//     li {
+//       flex: 1;
+//       list-style: none;
+      
+//       + li {
+//         margin-left: 1em;
+//       }
+//     }
+//   }
+
+//   .orange {
+//     display: flex;
+//   }
+// }
+
+// .ex4 .container {
+//   display: grid;
+//   grid-template: 
+//       '📝 👾 💁🏻‍' /
+//       auto 1fr auto;
+
+//   .green {
+//     grid-area: 📝;
+
+//     li {
+//       flex: 1;
+//       list-style: none;
+  
+//       + li {
+//         margin-left: 1em;
+//       }
+//     }
+//   }
+
+//   .orange {
+//     grid-area: 💁🏻‍;
+//   }
+// }
