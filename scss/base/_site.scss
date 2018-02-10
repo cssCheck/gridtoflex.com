@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+// @import url('https://fonts.googleapis.com/css?family=Work+Sans');
 
 * {
   box-sizing: border-box;
@@ -135,4 +135,45 @@ h1 {
 
 .grids .container div {
   min-height: 150px;
+}
+
+button {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  position: relative;
+  padding: 0;
+  margin: .25rem .5rem;
+  cursor: pointer;
+}
+
+button > div {
+  width: 100%;
+  display: block;
+  transition-duration: .5s;
+}
+
+button > div:first-child {
+  background: white;
+  border: 2px dashed lightgreen;
+  padding: .25em .5em;
+}
+
+button > div:last-child {
+  background: rgb(128, 0, 255);
+  height: 1.6em;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
+  left: 0;
+}
+
+button:hover > div:last-child {
+  transform: translate(5px, 7px);
+}
+
+button:hover > div:first-child {
+  transform: translate(-5px, -7px);
 }
