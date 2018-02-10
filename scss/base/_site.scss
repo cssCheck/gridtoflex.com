@@ -103,19 +103,45 @@ h1 {
 .example-section > div:first-child {
   flex: 2;
   padding-right: 1em;
+
+  a {
+    display: block;
+    margin: 1em auto -2em;
+    color: #c380c3;
+    font-size: 1rem;
+  }
 }
 
 .example-section > div:nth-child(2) {
   flex: 1;
   height: calc(#{var(--headerHeight)} + #{var(--middleHeight)} + #{var(--footerHeight)});
   overflow-y: scroll;
-  
 }
 
 .example-section > div:nth-child(3) {
   flex-basis: 100%;
   justify-content: flex-end;
   display: flex;
+}
+
+@media (max-width: 760px) {
+  .example-section > div:first-child,
+  .example-section > div:nth-child(2) {
+    flex-basis: 100%;
+  }
+
+  .example-section > div:first-child a {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .example-section > div:first-child {
+    padding-right: 0;
+  }
+
+  .example-section > div:nth-child(3){
+    justify-content: center;
+  }
 }
 
 .intro-text-area {
@@ -156,12 +182,12 @@ button > div {
 
 button > div:first-child {
   background: white;
-  border: 2px dashed lightgreen;
+  border: 2px dashed #a6eaa6;
   padding: .25em .5em;
 }
 
 button > div:last-child {
-  background: rgb(128, 0, 255);
+  background: #c380c3;;
   height: 1.6em;
   position: absolute;
   z-index: -1;
