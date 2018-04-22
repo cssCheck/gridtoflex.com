@@ -60,6 +60,6 @@ ol {
 }
 
 .container {
-  height: calc(#{var(--headerHeight)} + #{var(--middleHeight)} + #{var(--footerHeight)});
+  height: calc(460px);
   background-color: #f6f6f6;
 }

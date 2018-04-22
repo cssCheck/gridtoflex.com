@@ -114,7 +114,7 @@ h1 {
 
 .example-section > div:nth-child(2) {
   flex: 1;
-  max-height: calc(#{var(--headerHeight)} + #{var(--middleHeight)} + #{var(--footerHeight)});
+  max-height: 460px;
   overflow-y: scroll;
 }
 
