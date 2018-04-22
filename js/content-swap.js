@@ -60,7 +60,33 @@ const ex1_GridSolution =`/* Grid Implementation */
     grid-area: 👠;
   }
 }`;
-const ex1_FullSolution =`/* Grid Implementation */
+const ex1_FullSolution =`/* Flexbox Fallback */
+
+.ex1 .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ex1 .red {
+  flex-basis: 100%;
+  height: 60px;
+}
+
+.ex1 .orange {
+  flex: 1;
+}
+
+.ex1 .yellow {
+  flex: 3;
+  height: var(--middleHeight);
+}
+
+.ex1 .green {
+  flex-basis: 100%;
+  height: var(--footerHeight);
+}
+
+/* Grid Implementation */
 
 @supports (display: grid) {
   .ex1 .container {
@@ -86,34 +112,6 @@ const ex1_FullSolution =`/* Grid Implementation */
 
   .ex1 .green {
     grid-area: 👠;
-  }
-}
-
-/* Flexbox Fallback */
-
-@supports not (display: grid) {
-  .ex1 .container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  .ex1 .red {
-    flex-basis: 100%;
-    height: 60px;
-  }
-
-  .ex1 .orange {
-    flex: 1;
-  }
-
-  .ex1 .yellow {
-    flex: 3;
-    height: var(--middleHeight);
-  }
-
-  .ex1 .green {
-    flex-basis: 100%;
-    height: var(--footerHeight);
   }
 }`;
 
@@ -274,9 +272,7 @@ const ex2_FlexSolution =`/* Flex Implementation */
   height: var(--footerHeight);
 }`;
 
-const ex3_FullSolution = `/* Grid Implementation */
-
-/* Flexbox Fallback */
+const ex3_FullSolution = `/* Flexbox Fallback */
 
 .ex3 .container {
   display: flex;
@@ -350,7 +346,7 @@ const ex4_FlexSolution = `/* Flex Solution */
   margin-left: 1em;
 }`
 
-const ex4_FullSolution = `/* Flex Solution */
+const ex4_FullSolution = `/* Flexbox Fallback */
 
 .ex4 .yellow {
   display: flex;
@@ -362,6 +358,8 @@ const ex4_FullSolution = `/* Flex Solution */
 .ex4 .blue + .blue {
   margin-left: 1em;
 }
+
+/* Grid Implementation */
 
 @supports (display: grid) {
   /* Grid Solution */
