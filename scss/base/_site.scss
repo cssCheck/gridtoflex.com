@@ -248,3 +248,20 @@ button:hover > div:first-child {
     margin-right: 1rem;
   }
 }
+
+footer {
+  border-top: 2px dashed #ff00c0;
+  text-align: center;
+  background: #eee;
+  padding: 2rem;
+}
+
+footer p {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+footer a,
+footer span {
+  color: #ff00c0;
+}
