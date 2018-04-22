@@ -119,8 +119,43 @@ const ex1_FullSolution =`/* Grid Implementation */
 
 // Ex2: Full Sidebar
 
-const ex2_FullSolution = `/* Grid Implementation */
+const ex2_FullSolution = `/* Flexbox Fallback */
 
+.ex2 .container {
+  display: flex;
+}
+
+.ex2 .sidebar-container {
+  flex: 1;
+}
+
+.ex2 .orange {
+  height: 100%;
+  width: 100%;
+}
+
+.ex2 .main-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 3;
+}
+
+.ex2 .red {
+  flex-basis: 100%;
+  height: 60px;
+}
+
+.ex2 .yellow {
+  flex-basis: 100%;
+  height: var(--middleHeight);
+}
+
+.ex2 .green {
+  flex-basis: 100%;
+  height: var(--footerHeight);
+}
+
+/* Grid Implementation */
 @supports (display: grid) {
   .ex2 .container {
     display: grid;
@@ -159,44 +194,6 @@ const ex2_FullSolution = `/* Grid Implementation */
 
   .ex2 .green {
     grid-area: 👠;
-  }
-}
-
-// Flexbox Fallback
-
-@supports not (display: grid) {
-  .ex2 .container {
-    display: flex;
-  }
-  
-  .ex2 .sidebar-container {
-    flex: 1;
-  }
-  
-  .ex2 .orange {
-    height: 100%;
-    width: 100%;
-  }
-  
-  .ex2 .main-container {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 3;
-  }
-  
-  .ex2 .red {
-    flex-basis: 100%;
-    height: 60px;
-  }
-
-  .ex2 .yellow {
-    flex-basis: 100%;
-    height: var(--middleHeight);
-  }
-
-  .ex2 .green {
-    flex-basis: 100%;
-    height: var(--footerHeight);
   }
 }`;
 
@@ -279,6 +276,19 @@ const ex2_FlexSolution =`/* Flex Implementation */
 
 const ex3_FullSolution = `/* Grid Implementation */
 
+/* Flexbox Fallback */
+
+.ex3 .container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ex3 .container > div {
+  flex-basis: calc(100% / 4);
+}
+
+/* Grid Implementation */
+
 @supports (display: grid) {
   .ex3 .container {
     display: grid;
@@ -287,20 +297,6 @@ const ex3_FullSolution = `/* Grid Implementation */
   
   .ex3 .container > div {
     flex: 1;
-  }
-}
-
-/* Flexbox Fallback */
-
-@supports not (display: grid) {
-  .ex3 .container {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .ex3 .container > div {
-    flex: 1;
-    flex-basis: calc(100% / 4);
   }
 }`;
 const ex3_FlexSolution = `/* Flex Implementation */
@@ -352,6 +348,44 @@ const ex4_FlexSolution = `/* Flex Solution */
 
 .ex4 .blue + .blue {
   margin-left: 1em;
+}`
+
+const ex4_FullSolution = `/* Flex Solution */
+
+.ex4 .yellow {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  height: 60px;
+}
+
+.ex4 .blue + .blue {
+  margin-left: 1em;
+}
+
+@supports (display: grid) {
+  /* Grid Solution */
+
+  .ex4 .yellow {
+    display: grid;
+    grid-template: 
+        '📝 👾 💁🏻‍' /
+        auto 1fr auto;
+    height: 60px;
+    width: 100%;
+  }
+
+  .ex4 .green {
+    grid-area: 📝;
+  }
+
+  .ex4 .blue + .blue{
+    margin-left: 1em;
+  }
+
+  .ex4 .orange {
+    grid-area: 💁🏻‍;
+  }
 }`
 
 // Events
@@ -408,4 +442,4 @@ document.querySelector('.ex4 .both-button').addEventListener('click', function()
 // Initial setup for Ex1
 updateCodeContent(ex1_FullSolution, 'ex1');
 updateCodeContent(ex2_FullSolution, 'ex2');
-updateCodeContent(ex3_FullSolution, 'ex3');
+updateCodeContent(ex3_FullSolution, 'ex3'); updateCodeContent(ex4_FullSolution, 'ex4');
