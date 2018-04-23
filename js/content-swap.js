@@ -25,12 +25,12 @@ const ex1_FlexSolution = `/* Flex Implementation */
 
 .ex1 .yellow {
   flex: 3;
-  height: var(--middleHeight);
+  height: 300px;
 }
 
 .ex1 .green {
   flex-basis: 100%;
-  height: var(--footerHeight);
+  height: 100px;
 }`;
 
 const ex1_GridSolution =`/* Grid Implementation */
@@ -39,8 +39,8 @@ const ex1_GridSolution =`/* Grid Implementation */
   display: grid;
   grid-template: 
     '😁  😁' 60px
-    '🐒  📝' var(--middleHeight)
-    '👠  👠' var(--footerHeight) /
+    '🐒  📝' 300px
+    '👠  👠' 100px /
     1fr 3fr ;
   }
 
@@ -78,12 +78,12 @@ const ex1_FullSolution =`/* Flexbox Fallback */
 
 .ex1 .yellow {
   flex: 3;
-  height: var(--middleHeight);
+  height: 300px;
 }
 
 .ex1 .green {
   flex-basis: 100%;
-  height: var(--footerHeight);
+  height: 100px;
 }
 
 /* Grid Implementation */
@@ -93,8 +93,8 @@ const ex1_FullSolution =`/* Flexbox Fallback */
     display: grid;
     grid-template: 
         '😁  😁' 60px
-        '🐒  📝' var(--middleHeight)
-        '👠  👠' var(--footerHeight) /
+        '🐒  📝' 300px
+        '👠  👠' 100px /
         1fr 3fr ;
   }
 
@@ -145,12 +145,12 @@ const ex2_FullSolution = `/* Flexbox Fallback */
 
 .ex2 .yellow {
   flex-basis: 100%;
-  height: var(--middleHeight);
+  height: 300px;
 }
 
 .ex2 .green {
   flex-basis: 100%;
-  height: var(--footerHeight);
+  height: 100px;
 }
 
 /* Grid Implementation */
@@ -159,8 +159,8 @@ const ex2_FullSolution = `/* Flexbox Fallback */
     display: grid;
     grid-template: 
       '🐒  📝' 60px
-      '🐒  📝' var(--middleHeight)
-      '🐒  📝' var(--footerHeight) /
+      '🐒  📝' 300px
+      '🐒  📝' 100px /
       1fr 3fr ;
   }
 
@@ -177,8 +177,8 @@ const ex2_FullSolution = `/* Flexbox Fallback */
     display: grid;
     grid-template: 
       '😁' 60px
-      '💛' var(--middleHeight)
-      '👠' var(--footerHeight) /
+      '💛' 300px
+      '👠' 100px /
       100% ;
   }
   
@@ -201,8 +201,8 @@ const ex2_GridSolution =`/* Grid Implementation */
   display: grid;
   grid-template: 
     '🐒  📝' 60px
-    '🐒  📝' var(--middleHeight)
-    '🐒  📝' var(--footerHeight) /
+    '🐒  📝' 300px
+    '🐒  📝' 100px /
     1fr 3fr ;
 }
 
@@ -219,8 +219,8 @@ const ex2_GridSolution =`/* Grid Implementation */
   display: grid;
   grid-template: 
     '😁' 60px
-    '💛' var(--middleHeight)
-    '👠' var(--footerHeight) /
+    '💛' 300px
+    '👠' 100px /
     100% ;
 }
 
@@ -264,12 +264,12 @@ const ex2_FlexSolution =`/* Flex Implementation */
 
 .ex2 .yellow {
   flex-basis: 100%;
-  height: var(--middleHeight);
+  height: 300px;
 }
 
 .ex2 .green {
   flex-basis: 100%;
-  height: var(--footerHeight);
+  height: 100px;
 }`;
 
 const ex3_FullSolution = `/* Flexbox Fallback */
